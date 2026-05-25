@@ -345,6 +345,16 @@
             localStorage.setItem('ahmadi_physics_alerts', JSON.stringify(alerts));
           }, [alerts]);
 
+          // --- إضافة حالة "عدد الزيارات" وتخزينها في المتصفح ---
+          const [visitCount, setVisitCount] = useState(() => {
+            const savedCount = localStorage.getItem('ahmadi_physics_visit_count');
+            return savedCount ? parseInt(savedCount, 10) : 0;
+          });
+
+          useEffect(() => {
+            localStorage.setItem('ahmadi_physics_visit_count', visitCount.toString());
+          }, [visitCount]);
+
           return (
             <div className="flex h-screen overflow-hidden text-right" dir="rtl">
               
@@ -383,8 +393,8 @@
 
               {/* Main Content */}
               <main className="flex-1 overflow-y-auto bg-slate-50 relative">
-                {activeTab === 'dashboard' && <DashboardView teachers={teachers} plans={plans} setPlans={setPlans} />}
-                {activeTab === 'visit' && <VisitFormView teachers={teachers} />}
+                {activeTab === 'dashboard' && <DashboardView teachers={teachers} plans={plans} setPlans={setPlans} visitCount={visitCount} />}
+                {activeTab === 'visit' && <VisitFormView teachers={teachers} onVisitComplete={() => setVisitCount(prev => prev + 1)} />}
                 {activeTab === 'teachers' && <TeachersView teachers={teachers} setTeachers={setTeachers} />}
                 {activeTab === 'analytics' && <AnalyticsView data={analyticsData} setData={setAnalyticsData} teachers={teachers} alerts={alerts} setAlerts={setAlerts} />}
               </main>
@@ -396,7 +406,7 @@
         // ==========================================
         // Dashboard View (الرئيسية)
         // ==========================================
-        function DashboardView({ teachers, plans, setPlans }) {
+        function DashboardView({ teachers, plans, setPlans, visitCount }) {
           const [newPlan, setNewPlan] = useState({ title: '', desc: '', type: 'emerald' });
           const [isAddingPlan, setIsAddingPlan] = useState(false);
 
@@ -437,7 +447,7 @@
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-orange-100 flex items-center justify-between">
                   <div>
                     <p className="text-sm text-gray-500 font-bold mb-1">الزيارات المنجزة</p>
-                    <p className="text-4xl font-extrabold text-orange-700">0</p>
+                    <p className="text-4xl font-extrabold text-orange-700">{visitCount}</p>
                   </div>
                   <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center text-2xl">📋</div>
                 </div>
@@ -549,7 +559,7 @@
         // ==========================================
         // Visit Form & WhatsApp Sender (التقرير والواتساب)
         // ==========================================
-        function VisitFormView({ teachers }) {
+        function VisitFormView({ teachers, onVisitComplete }) {
           const [formData, setFormData] = useState({
             teacherName: '',
             civilId: '',
@@ -684,6 +694,11 @@
                     } else {
                          alert(`متصفحك لا يدعم المشاركة التلقائية للملفات، يرجى إدخال رقم الهاتف لاستخدام واتساب ويب.`);
                     }
+                }
+
+                // إضافة زيادة العداد بمقدار 1 بعد نجاح عملية التوليد
+                if (onVisitComplete) {
+                    onVisitComplete();
                 }
 
             } catch (err) {
