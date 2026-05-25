@@ -43,15 +43,20 @@
             color: #000;
             background-color: #fff;
         }
+        .pdf-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
         .pdf-table th, .pdf-table td {
-            border: 1px solid #cbd5e1;
-            padding: 12px;
+            border: 1px solid #000;
+            padding: 6px;
             text-align: right;
+            font-size: 12px;
         }
         .pdf-table th {
             background-color: #f1f5f9;
             font-weight: bold;
-            width: 30%;
+        }
+        .avoid-break {
+            page-break-inside: avoid;
+            break-inside: avoid;
         }
     </style>
 </head>
@@ -270,7 +275,7 @@
           Dashboard: () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>,
           Form: () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>,
           Users: () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>,
-          Chart: () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>,
+          Chart: () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>,
           Trash: () => <svg className="w-4 h-4 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>,
           WhatsApp: () => <svg className="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>,
           Spinner: () => <svg className="animate-spin h-5 w-5 mr-2 text-white inline" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
@@ -295,6 +300,50 @@
           useEffect(() => {
             localStorage.setItem('ahmadi_physics_teachers', JSON.stringify(teachers));
           }, [teachers]);
+
+          // --- إضافة حالة "خطة العمل والتوجيهات" وتخزينها في المتصفح ---
+          const initialPlans = [
+            { id: 1, title: "متابعة المدارس ذات التحصيل المتدني", desc: "تجهيز خطة علاجية لرفع مستوى التحصيل في وحدة \"الكهرباء والمغناطيسية\".", type: "red" },
+            { id: 2, title: "ورشة المعلمين الجدد", desc: "إعداد المادة العلمية لورشة \"استراتيجيات تدريس الفيزياء الحديثة\".", type: "emerald" }
+          ];
+          const [plans, setPlans] = useState(() => {
+            const savedPlans = localStorage.getItem('ahmadi_physics_plans');
+            return savedPlans ? JSON.parse(savedPlans) : initialPlans;
+          });
+          
+          useEffect(() => {
+            localStorage.setItem('ahmadi_physics_plans', JSON.stringify(plans));
+          }, [plans]);
+
+          // --- إضافة حالة "تحليل النتائج" وتخزينها في المتصفح ---
+          const initialAnalytics = [
+            { id: 1, name: 'أيوب حسين الأيوب', passRate: 85 },
+            { id: 2, name: 'عيسى عبد الله الهولي', passRate: 92 },
+            { id: 3, name: 'هشام بن العاص', passRate: 58 },
+            { id: 4, name: 'الكندي', passRate: 88 },
+          ];
+          const [analyticsData, setAnalyticsData] = useState(() => {
+            const saved = localStorage.getItem('ahmadi_physics_analytics');
+            return saved ? JSON.parse(saved) : initialAnalytics;
+          });
+          
+          useEffect(() => {
+            localStorage.setItem('ahmadi_physics_analytics', JSON.stringify(analyticsData));
+          }, [analyticsData]);
+
+          // --- إضافة حالة "التنبيهات والخطط" وتخزينها في المتصفح ---
+          const initialAlerts = [
+            { id: 1, title: 'مدرسة هشام بن العاص', text: 'انخفاض نسبة النجاح عن المعدل الطبيعي (58%). يوصى بزيارة فنية مكثفة ومراجعة خطط رئيس القسم وإعداد خطة علاجية عاجلة.', type: 'red' },
+            { id: 2, title: 'تحليل الوحدات', text: 'لوحظ تدني عام في درجات وحدة "الكهرباء والمغناطيسية" على مستوى المنطقة. يوصى بتنظيم ورشة عمل فنية لمعلمي المنطقة.', type: 'orange' }
+          ];
+          const [alerts, setAlerts] = useState(() => {
+            const saved = localStorage.getItem('ahmadi_physics_alerts');
+            return saved ? JSON.parse(saved) : initialAlerts;
+          });
+
+          useEffect(() => {
+            localStorage.setItem('ahmadi_physics_alerts', JSON.stringify(alerts));
+          }, [alerts]);
 
           return (
             <div className="flex h-screen overflow-hidden text-right" dir="rtl">
@@ -334,10 +383,10 @@
 
               {/* Main Content */}
               <main className="flex-1 overflow-y-auto bg-slate-50 relative">
-                {activeTab === 'dashboard' && <DashboardView teachers={teachers} />}
+                {activeTab === 'dashboard' && <DashboardView teachers={teachers} plans={plans} setPlans={setPlans} />}
                 {activeTab === 'visit' && <VisitFormView teachers={teachers} />}
                 {activeTab === 'teachers' && <TeachersView teachers={teachers} setTeachers={setTeachers} />}
-                {activeTab === 'analytics' && <AnalyticsView />}
+                {activeTab === 'analytics' && <AnalyticsView data={analyticsData} setData={setAnalyticsData} teachers={teachers} alerts={alerts} setAlerts={setAlerts} />}
               </main>
 
             </div>
@@ -347,7 +396,25 @@
         // ==========================================
         // Dashboard View (الرئيسية)
         // ==========================================
-        function DashboardView({ teachers }) {
+        function DashboardView({ teachers, plans, setPlans }) {
+          const [newPlan, setNewPlan] = useState({ title: '', desc: '', type: 'emerald' });
+          const [isAddingPlan, setIsAddingPlan] = useState(false);
+
+          // دالة حفظ الخطة الجديدة
+          const handleAddPlan = (e) => {
+            e.preventDefault();
+            if (!newPlan.title || !newPlan.desc) return;
+            const newId = plans.length > 0 ? Math.max(...plans.map(p => p.id)) + 1 : 1;
+            setPlans([{ id: newId, ...newPlan }, ...plans]); // الإضافة في أعلى القائمة
+            setNewPlan({ title: '', desc: '', type: 'emerald' });
+            setIsAddingPlan(false);
+          };
+
+          // دالة حذف الخطة
+          const handleDeletePlan = (id) => {
+            setPlans(plans.filter(p => p.id !== id));
+          };
+
           return (
             <div className="p-8 animate-fade-in">
               <h2 className="text-3xl font-bold text-gray-800 mb-8 border-b pb-4">مؤشرات الأداء للمنطقة</h2>
@@ -370,28 +437,114 @@
                 <div className="bg-white p-6 rounded-2xl shadow-sm border border-orange-100 flex items-center justify-between">
                   <div>
                     <p className="text-sm text-gray-500 font-bold mb-1">الزيارات المنجزة</p>
-                    <p className="text-4xl font-extrabold text-orange-700">45</p>
+                    <p className="text-4xl font-extrabold text-orange-700">0</p>
                   </div>
                   <div className="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center text-2xl">📋</div>
                 </div>
               </div>
 
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">خطة العمل والتوجيهات (محاكاة)</h3>
+                <div className="flex justify-between items-center mb-6 border-b pb-4">
+                  <h3 className="text-xl font-bold text-gray-800">خطة العمل والتوجيهات</h3>
+                  <button onClick={() => setIsAddingPlan(!isAddingPlan)} className="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-xl font-bold text-sm hover:bg-emerald-200 transition-colors">
+                    {isAddingPlan ? 'إلغاء' : 'إضافة توجيه جديد +'}
+                  </button>
+                </div>
+
+                {isAddingPlan && (
+                  <form onSubmit={handleAddPlan} className="mb-6 p-5 bg-gray-50 rounded-xl border border-gray-200 shadow-inner">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                      <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-1">عنوان التوجيه / الخطة</label>
+                        <input type="text" required value={newPlan.title} onChange={e => setNewPlan({...newPlan, title: e.target.value})} className="w-full p-3 border border-gray-300 rounded-lg outline-none focus:border-emerald-500" placeholder="مثال: اجتماع طارئ..." />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-gray-700 mb-1">نوع الخطة (اللون)</label>
+                        <select value={newPlan.type} onChange={e => setNewPlan({...newPlan, type: e.target.value})} className="w-full p-3 border border-gray-300 rounded-lg outline-none focus:border-emerald-500 font-bold">
+                          <option value="emerald">عادية / عامة (أخضر)</option>
+                          <option value="red">عاجلة / تنبيه (أحمر)</option>
+                          <option value="blue">إعلامية / توضيح (أزرق)</option>
+                        </select>
+                      </div>
+                      <div className="md:col-span-2">
+                        <label className="block text-sm font-bold text-gray-700 mb-1">التفاصيل</label>
+                        <textarea required value={newPlan.desc} onChange={e => setNewPlan({...newPlan, desc: e.target.value})} className="w-full p-3 border border-gray-300 rounded-lg outline-none focus:border-emerald-500 h-20 resize-none" placeholder="اكتب تفاصيل التوجيه هنا..."></textarea>
+                      </div>
+                    </div>
+                    <button type="submit" className="bg-emerald-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-emerald-700 transition-colors w-full md:w-auto">حفظ وإضافة الخطة</button>
+                  </form>
+                )}
+
                 <div className="space-y-4">
-                  <div className="p-4 bg-red-50 border-r-4 border-red-500 rounded-lg">
-                    <h4 className="font-bold text-red-800">متابعة المدارس ذات التحصيل المتدني</h4>
-                    <p className="text-sm text-red-600 mt-1">تجهيز خطة علاجية لرفع مستوى التحصيل في وحدة "الكهرباء والمغناطيسية".</p>
-                  </div>
-                  <div className="p-4 bg-emerald-50 border-r-4 border-emerald-500 rounded-lg">
-                    <h4 className="font-bold text-emerald-800">ورشة المعلمين الجدد</h4>
-                    <p className="text-sm text-emerald-600 mt-1">إعداد المادة العلمية لورشة "استراتيجيات تدريس الفيزياء الحديثة".</p>
-                  </div>
+                  {plans.length === 0 ? (
+                     <p className="text-gray-500 text-center p-6 bg-gray-50 rounded-xl border border-dashed border-gray-300">لا توجد خطط أو توجيهات حالياً. أضف توجيهك الأول!</p>
+                  ) : (
+                    plans.map(plan => (
+                      <div key={plan.id} className={`p-4 border-r-4 rounded-xl flex justify-between items-start shadow-sm transition-all hover:shadow-md ${plan.type === 'red' ? 'bg-red-50 border-red-500' : plan.type === 'blue' ? 'bg-blue-50 border-blue-500' : 'bg-emerald-50 border-emerald-500'}`}>
+                        <div>
+                          <h4 className={`font-bold text-lg ${plan.type === 'red' ? 'text-red-800' : plan.type === 'blue' ? 'text-blue-800' : 'text-emerald-800'}`}>{plan.title}</h4>
+                          <p className={`text-sm mt-1 leading-relaxed ${plan.type === 'red' ? 'text-red-700' : plan.type === 'blue' ? 'text-blue-700' : 'text-emerald-700'}`}>{plan.desc}</p>
+                        </div>
+                        <button onClick={() => handleDeletePlan(plan.id)} className="text-gray-400 hover:text-red-500 p-2 bg-white rounded-lg shadow-sm border border-gray-100 hover:border-red-200 transition-colors" title="حذف الخطة">
+                          <Icons.Trash />
+                        </button>
+                      </div>
+                    ))
+                  )}
                 </div>
               </div>
             </div>
           );
         }
+
+        const evaluationCriteria = [
+          {
+            category: 'التخطيط للدرس',
+            items: [
+              'نهج التعلم / حلقة التعلم / التحضير الكتابي',
+              'النشاط التحفيزي / التمهيد',
+              'تحديد الهدف من الأنشطة التعلمية',
+              'تحقيق الهدف من الأنشطة الداعمة',
+              'أدوات الدعم (الوسائل، الاستراتيجيات، ...)',
+              'شمولية التقويم وارتباطه بالمعايير / الأهداف',
+              'متابعة خطة سير المنهج (ما قطع من المنهج)',
+              'التقويم النهائي / التقويم اللاصفي (تنوع أنماط الأسئلة)'
+            ]
+          },
+          {
+            category: 'التنفيذ',
+            items: [
+              'أنشطة التعلم وتنفيذها بصورة تفاعلية',
+              'السبورة (العادية / التفاعلية / الذكية)',
+              'الملخص السبوري',
+              'التقويم البنائي / التغذية الراجعة',
+              'التمكن من المادة العلمية',
+              'ربط المفاهيم بـ (تطبيقات حياتية / العلوم الأخرى)',
+              'التحضير الذهني (التدرج والترابط في الأفكار)'
+            ]
+          },
+          {
+            category: 'متابعة المتعلمين',
+            items: [
+              'مراعاة الفروق الفردية',
+              'تفعيل بطاقة متابعة الأداء (سجل المتابعة)',
+              'تحقيق غرس القيم والهدف الوجداني',
+              'جودة تنفيذ التقويم النهائي / اللاصفي',
+              'التعامل مع المتعلم والقدرة على حل المشكلات'
+            ]
+          },
+          {
+            category: 'الجوانب الشخصية',
+            items: [
+              'الثقة بالنفس والاتزان',
+              'التحدث باللغة العربية الميسرة',
+              'التغيير في نبرة الصوت ووضوحه',
+              'إدارة زمن الحصة',
+              'إدارة وضبط الفصل',
+              'تقبل النقد والالتزام بالتوجيهات'
+            ]
+          }
+        ];
 
         // ==========================================
         // Visit Form & WhatsApp Sender (التقرير والواتساب)
@@ -402,17 +555,20 @@
             civilId: '',
             school: '',
             date: new Date().toISOString().split('T')[0],
+            day: '',
+            period: 'الأولى / الثانية',
+            lesson: '',
+            classLevel: '',
+            place: '',
             lessonTitle: '',
-            grade: '',
-            evaluation: 'امتياز',
-            strengths: '',
+            evaluations: {},
             recommendations: '',
           });
 
           const [phoneNumbers, setPhoneNumbers] = useState({
             principal: '',
             hod: '',
-            senior: '' 
+            senior: '94421113' 
           });
 
           const [searchQuery, setSearchQuery] = useState('');
@@ -436,9 +592,22 @@
             setShowDropdown(false);
           };
 
+          const handleEvalChange = (catIdx, itemIdx, field, value) => {
+             const key = `${catIdx}-${itemIdx}`;
+             setFormData(prev => ({
+                 ...prev,
+                 evaluations: {
+                     ...prev.evaluations,
+                     [key]: {
+                         ...prev.evaluations[key],
+                         [field]: value
+                     }
+                 }
+             }));
+          };
+
           // --- دالة تحميل الـ PDF وفتح الواتساب (للحاسوب) ---
           const downloadAndOpenWa = (pdfBlob, fileName, phoneNumber, messageText) => {
-             // تنزيل الملف
              const url = URL.createObjectURL(pdfBlob);
              const a = document.createElement('a');
              a.href = url;
@@ -448,7 +617,6 @@
              document.body.removeChild(a);
              URL.revokeObjectURL(url);
              
-             // فتح واتساب ويب
              let cleanedNumber = phoneNumber.replace(/\D/g, '');
              if (cleanedNumber.length === 8) {
                  cleanedNumber = '965' + cleanedNumber; 
@@ -465,25 +633,17 @@
                 return;
             }
             if (!phoneNumber && !navigator.canShare) {
-                // إذا كنا سنستخدم رابط wa.me في الكمبيوتر، نحتاج الرقم
                 alert(`الرجاء إدخال رقم هاتف ${recipientRole}`);
                 return;
             }
 
             setIsGenerating(true);
 
-            // 1. استنساخ قالب الـ PDF المخفي لتصويره
             const element = document.getElementById('pdf-hidden-template');
-            const clone = element.cloneNode(true);
-            clone.style.display = 'block'; 
-            clone.style.position = 'absolute';
-            clone.style.left = '-9999px';
-            document.body.appendChild(clone);
-
-            const fileName = `زيارة_${formData.teacherName.replace(/\s+/g, '_')}_${formData.date}.pdf`;
+            const fileName = `تقرير_زيارة_${formData.teacherName}.pdf`;
 
             const opt = {
-              margin:       0.5,
+              margin:       0.3,
               filename:     fileName,
               image:        { type: 'jpeg', quality: 0.98 },
               html2canvas:  { scale: 2, useCORS: true },
@@ -491,41 +651,34 @@
             };
 
             try {
-                // 2. توليد الـ PDF على هيئة Blob بدلاً من تحميله مباشرة
-                const pdfWorker = html2pdf().set(opt).from(clone);
+                const pdfWorker = html2pdf().set(opt).from(element);
                 const pdfBlob = await pdfWorker.output('blob');
                 
-                // تحويل الـ Blob إلى File ليكون قابلاً للمشاركة
                 const file = new File([pdfBlob], fileName, { type: 'application/pdf' });
 
                 const messageText = `
-*التوجيه الفني للفيزياء - منطقة الأحمدي*
-*تقرير زيارة فنية موجز* 📋
+*التوجيه الفني للعلوم - منطقة الأحمدي*
+*تقرير زيارة فنية (فيزياء)* 📋
 ------------------------------
 *اسم المعلم:* ${formData.teacherName}
 *المدرسة:* ${formData.school}
-*التقييم المبدئي:* *${formData.evaluation}*
+*عنوان الدرس:* ${formData.lessonTitle || '-'}
 ------------------------------
-📌 *تجدون التقرير التفصيلي (PDF) مرفقاً.*
+📌 *تجدون تقييم بنود التقرير التفصيلي (PDF) مرفقاً.*
                 `.trim();
 
-                // 3. التحقق مما إذا كان الجهاز يدعم المشاركة الأصلية (للآيباد والهواتف)
                 if (navigator.canShare && navigator.canShare({ files: [file] })) {
                     try {
-                        // سيفتح نافذة المشاركة بالجهاز، اختر منها الواتساب وسيتم إرفاق الـ PDF والرسالة فوراً!
                         await navigator.share({
                             files: [file],
                             title: 'تقرير زيارة',
                             text: messageText
                         });
                     } catch (shareError) {
-                        // المستخدم ألغى المشاركة أو حدث خطأ، نعود لخطة تنزيل الملف كخطة بديلة
                         console.log("تم إلغاء المشاركة أو غير مدعومة، التحويل للوضع العادي.");
                         if (phoneNumber) downloadAndOpenWa(pdfBlob, fileName, phoneNumber, messageText);
                     }
                 } else {
-                    // جهاز كمبيوتر أو متصفح لا يدعم المشاركة المباشرة:
-                    // سنقوم بتنزيل الملف وفتح رابط الواتساب ليقوم المستخدم بإرفاقه.
                     if (phoneNumber) {
                         downloadAndOpenWa(pdfBlob, fileName, phoneNumber, messageText);
                     } else {
@@ -537,24 +690,22 @@
                 console.error("Error generating PDF:", err);
                 alert("حدث خطأ أثناء محاولة إنشاء التقرير.");
             } finally {
-                document.body.removeChild(clone);
                 setIsGenerating(false);
             }
           };
 
           return (
-            <div className="p-8 animate-fade-in max-w-5xl mx-auto relative">
+            <div className="p-8 animate-fade-in max-w-6xl mx-auto relative">
               
               <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 relative z-10">
                 <div className="text-center border-b border-gray-100 pb-6 mb-8">
-                  <h2 className="text-3xl font-extrabold text-emerald-900 mb-2">نموذج المتابعة والزيارة الفنية</h2>
-                  <p className="text-gray-500">خاص بموجهي الفيزياء - منطقة الأحمدي التعليمية</p>
+                  <h2 className="text-3xl font-extrabold text-emerald-900 mb-2">نموذج زيارة الموجه الفني للمعلم</h2>
+                  <p className="text-gray-500">التوجيه الفني للعلوم - مستوحى من النموذج الرسمي المعتمد</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                  
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-x-6 gap-y-4">
                   {/* بحث المعلم */}
-                  <div className="relative col-span-1 md:col-span-2">
+                  <div className="relative col-span-1 md:col-span-4">
                     <label className="block text-sm font-bold text-gray-700 mb-2">اسم المعلم (بحث بالاسم أو الرقم المدني)</label>
                     <input
                       type="text"
@@ -586,54 +737,103 @@
                     )}
                   </div>
 
-                  {/* بيانات تلقائية */}
-                  <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">الرقم المدني</label>
-                    <input type="text" className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-600 font-semibold" value={formData.civilId} readOnly placeholder="يتم التعبئة تلقائياً" />
+                  {/* معلومات أساسية تلقائية */}
+                  <div className="col-span-1 md:col-span-2">
+                    <label className="block text-sm font-bold text-gray-700 mb-1">الرقم المدني</label>
+                    <input type="text" className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-600 font-semibold" value={formData.civilId} readOnly placeholder="يتم التعبئة تلقائياً" />
                   </div>
-                  <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">المدرسة</label>
-                    <input type="text" className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl text-gray-600 font-semibold" value={formData.school} readOnly placeholder="يتم التعبئة تلقائياً" />
+                  <div className="col-span-1 md:col-span-2">
+                    <label className="block text-sm font-bold text-gray-700 mb-1">المدرسة</label>
+                    <input type="text" className="w-full p-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-600 font-semibold" value={formData.school} readOnly placeholder="يتم التعبئة تلقائياً" />
                   </div>
 
-                  {/* تفاصيل الزيارة */}
+                  {/* بيانات الزيارة الجديدة */}
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">تاريخ الزيارة</label>
-                    <input type="date" className="w-full p-4 border border-gray-300 rounded-xl focus:border-emerald-500 outline-none" 
-                      value={formData.date} onChange={e => setFormData({...formData, date: e.target.value})} />
+                    <label className="block text-sm font-bold text-gray-700 mb-1">اليوم</label>
+                    <input type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:border-emerald-500 outline-none" value={formData.day} onChange={e => setFormData({...formData, day: e.target.value})} placeholder="مثال: الأحد" />
                   </div>
                   <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">التقييم المبدئي للدرس</label>
-                    <select className="w-full p-4 border border-gray-300 rounded-xl focus:border-emerald-500 outline-none font-bold"
-                      value={formData.evaluation} onChange={e => setFormData({...formData, evaluation: e.target.value})}>
-                      <option>امتياز</option>
-                      <option>جيد جداً</option>
-                      <option>جيد</option>
-                      <option>مقبول</option>
-                      <option>ضعيف</option>
-                    </select>
+                    <label className="block text-sm font-bold text-gray-700 mb-1">التاريخ</label>
+                    <input type="date" className="w-full p-3 border border-gray-300 rounded-lg focus:border-emerald-500 outline-none" value={formData.date} onChange={e => setFormData({...formData, date: e.target.value})} />
                   </div>
-                  
                   <div className="col-span-1 md:col-span-2">
-                    <label className="block text-sm font-bold text-gray-700 mb-2">عنوان الدرس / الوحدة</label>
-                    <input type="text" className="w-full p-4 border border-gray-300 rounded-xl focus:border-emerald-500 outline-none" 
-                      placeholder="مثال: قانون أوم - الصف الثاني عشر"
-                      value={formData.lessonTitle} onChange={e => setFormData({...formData, lessonTitle: e.target.value})} />
+                    <label className="block text-sm font-bold text-gray-700 mb-1">الفترة الدراسية</label>
+                    <input type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:border-emerald-500 outline-none" value={formData.period} onChange={e => setFormData({...formData, period: e.target.value})} placeholder="الأولى / الثانية" />
                   </div>
 
-                  {/* الملاحظات */}
-                  <div className="col-span-1 md:col-span-2">
-                    <label className="block text-sm font-bold text-emerald-700 mb-2">أبرز الإيجابيات ونقاط القوة 🟢</label>
-                    <textarea className="w-full p-4 border border-gray-300 rounded-xl h-28 focus:border-emerald-500 outline-none resize-none" 
-                      placeholder="اكتب الإيجابيات التي تم رصدها أثناء الحصة..."
-                      value={formData.strengths} onChange={e => setFormData({...formData, strengths: e.target.value})}></textarea>
+                  <div>
+                    <label className="block text-sm font-bold text-gray-700 mb-1">الصف</label>
+                    <input type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:border-emerald-500 outline-none" value={formData.classLevel} onChange={e => setFormData({...formData, classLevel: e.target.value})} />
                   </div>
-                  <div className="col-span-1 md:col-span-2">
-                    <label className="block text-sm font-bold text-blue-700 mb-2">التوصيات والتوجيهات الفنية 💡</label>
-                    <textarea className="w-full p-4 border border-gray-300 rounded-xl h-28 focus:border-blue-500 outline-none resize-none" 
-                      placeholder="اكتب التوصيات التي يجب على المعلم ورئيس القسم العمل بها..."
+                  <div>
+                    <label className="block text-sm font-bold text-gray-700 mb-1">الحصة</label>
+                    <input type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:border-emerald-500 outline-none" value={formData.lesson} onChange={e => setFormData({...formData, lesson: e.target.value})} />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-gray-700 mb-1">المكان</label>
+                    <input type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:border-emerald-500 outline-none" placeholder="المختبر / الفصل" value={formData.place} onChange={e => setFormData({...formData, place: e.target.value})} />
+                  </div>
+                  <div className="col-span-1 md:col-span-4 mt-2">
+                    <label className="block text-sm font-bold text-gray-700 mb-1">عنوان الدرس</label>
+                    <input type="text" className="w-full p-3 border border-gray-300 rounded-lg focus:border-emerald-500 outline-none" value={formData.lessonTitle} onChange={e => setFormData({...formData, lessonTitle: e.target.value})} />
+                  </div>
+                </div>
+
+                {/* Rubric Evaluation Table */}
+                <div className="mt-8">
+                  <h3 className="text-xl font-bold text-emerald-900 mb-4 border-b pb-2">بنود التقييم</h3>
+                  <div className="overflow-x-auto rounded-xl border border-gray-200">
+                    <table className="w-full text-right bg-white min-w-[800px]">
+                      <thead className="bg-emerald-700 text-white">
+                         <tr>
+                           <th className="p-3 w-10 text-center">م</th>
+                           <th className="p-3">البند</th>
+                           <th className="p-3 text-center w-20">مناسب</th>
+                           <th className="p-3 text-center w-24">إلى حد ما</th>
+                           <th className="p-3 text-center w-24">غير مناسب</th>
+                           <th className="p-3 w-1/4">ملاحظات</th>
+                         </tr>
+                      </thead>
+                      <tbody>
+                         {evaluationCriteria.map((cat, cIdx) => (
+                             <React.Fragment key={cIdx}>
+                                 <tr className="bg-emerald-100 border-b border-emerald-200">
+                                    <td colSpan="6" className="p-3 font-bold text-emerald-900">{cat.category}</td>
+                                 </tr>
+                                 {cat.items.map((item, iIdx) => {
+                                     const key = `${cIdx}-${iIdx}`;
+                                     const currentVal = formData.evaluations[key] || { rating: '', note: '' };
+                                     return (
+                                         <tr key={key} className="border-b hover:bg-gray-50">
+                                             <td className="p-3 text-center text-gray-500 font-bold">{iIdx + 1}</td>
+                                             <td className="p-3 text-sm font-semibold text-gray-800">{item}</td>
+                                             <td className="p-3 text-center">
+                                                <input type="radio" name={key} checked={currentVal.rating === 'مناسب'} onChange={() => handleEvalChange(cIdx, iIdx, 'rating', 'مناسب')} className="w-5 h-5 accent-emerald-600" />
+                                             </td>
+                                             <td className="p-3 text-center">
+                                                <input type="radio" name={key} checked={currentVal.rating === 'إلى حد ما'} onChange={() => handleEvalChange(cIdx, iIdx, 'rating', 'إلى حد ما')} className="w-5 h-5 accent-yellow-500" />
+                                             </td>
+                                             <td className="p-3 text-center">
+                                                <input type="radio" name={key} checked={currentVal.rating === 'غير مناسب'} onChange={() => handleEvalChange(cIdx, iIdx, 'rating', 'غير مناسب')} className="w-5 h-5 accent-red-600" />
+                                             </td>
+                                             <td className="p-2">
+                                                <input type="text" className="w-full border border-gray-300 p-2 rounded-lg text-sm focus:border-emerald-500 outline-none" value={currentVal.note} onChange={(e) => handleEvalChange(cIdx, iIdx, 'note', e.target.value)} />
+                                             </td>
+                                         </tr>
+                                     )
+                                 })}
+                             </React.Fragment>
+                         ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                    <label className="block text-sm font-bold text-blue-700 mb-2">التوصيات 💡</label>
+                    <textarea className="w-full p-4 border border-gray-300 rounded-xl h-24 focus:border-blue-500 outline-none resize-none" 
+                      placeholder="اكتب التوصيات..."
                       value={formData.recommendations} onChange={e => setFormData({...formData, recommendations: e.target.value})}></textarea>
-                  </div>
                 </div>
               </div>
 
@@ -674,8 +874,8 @@
                   {/* الموجه الأول */}
                   <div className="bg-emerald-50 p-5 rounded-2xl shadow-sm border-2 border-emerald-200">
                     <label className="block text-sm font-bold text-emerald-800 mb-3 text-center">الموجه الأول: أ. طارق شهاب</label>
-                    <input type="tel" className="w-full p-3 border border-emerald-300 rounded-xl mb-4 text-center font-bold bg-white" dir="ltr" placeholder="رقم الهاتف (للحاسوب)"
-                      value={phoneNumbers.senior} onChange={e => setPhoneNumbers({...phoneNumbers, senior: e.target.value})} />
+                    <input type="tel" className="w-full p-3 border border-emerald-300 rounded-xl mb-4 text-center font-bold bg-emerald-100 cursor-not-allowed" dir="ltr" readOnly
+                      value={phoneNumbers.senior} />
                     <button disabled={isGenerating} onClick={() => sendWhatsAppAndPDF(phoneNumbers.senior, 'الموجه الأول')} className="w-full bg-emerald-700 hover:bg-emerald-800 disabled:bg-gray-400 text-white py-3 rounded-xl font-bold flex justify-center items-center transition-all shadow-md">
                       {isGenerating ? <><Icons.Spinner /> جاري...</> : <>مشاركة التقرير <Icons.WhatsApp /></>}
                     </button>
@@ -685,71 +885,98 @@
               </div>
 
               {/* قالب الـ PDF المخفي */}
-              <div style={{ display: 'none' }}>
-                <div id="pdf-hidden-template" className="pdf-report-container" style={{ width: '800px', padding: '40px', direction: 'rtl' }}>
-                    <div style={{ textAlign: 'center', marginBottom: '30px', borderBottom: '2px solid #065f46', paddingBottom: '15px' }}>
-                        <h1 style={{ fontSize: '26px', fontWeight: 'bold', color: '#065f46', margin: '0' }}>دولة الكويت - وزارة التربية</h1>
-                        <h2 style={{ fontSize: '20px', fontWeight: 'bold', marginTop: '10px', color: '#333' }}>منطقة الأحمدي التعليمية</h2>
-                        <h3 style={{ fontSize: '18px', marginTop: '5px', color: '#555' }}>التوجيه الفني للفيزياء</h3>
+              <div style={{ position: 'absolute', top: '-10000px', left: '-10000px' }}>
+                <div id="pdf-hidden-template" className="pdf-report-container" style={{ width: '800px', padding: '20px 40px', direction: 'rtl', backgroundColor: '#ffffff', color: '#000000' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '15px' }}>
+                        <div style={{ textAlign: 'center', lineHeight: '1.4' }}>
+                           <p style={{ margin: 0, fontWeight: 'bold' }}>وزارة التربية</p>
+                           <p style={{ margin: 0 }}>الإدارة العامة لمنطقة الأحمدي التعليمية</p>
+                           <p style={{ margin: 0 }}>التوجيه الفني للعلوم</p>
+                        </div>
+                        <div style={{ textAlign: 'center' }}>
+                            <h1 style={{ fontSize: '20px', fontWeight: 'bold', margin: '0' }}>نموذج زيارة معلم علوم</h1>
+                            <p style={{ margin: '5px 0 0 0', fontWeight: 'bold' }}>دولة الكويت | State of Kuwait</p>
+                        </div>
+                        <div style={{ textAlign: 'center', width: '150px' }}>
+                           <p style={{ margin: 0, fontWeight: 'bold' }}>Ministry of Education</p>
+                        </div>
                     </div>
 
-                    <div style={{ textAlign: 'center', margin: '20px 0 30px' }}>
-                        <span style={{ fontSize: '22px', fontWeight: 'bold', backgroundColor: '#ecfdf5', padding: '10px 30px', borderRadius: '8px', border: '1px solid #a7f3d0', display: 'inline-block' }}>
-                            تقرير زيارة فنية
-                        </span>
-                    </div>
-
-                    <table className="pdf-table" style={{ width: '100%', borderCollapse: 'collapse', marginBottom: '20px' }}>
+                    <table className="pdf-table avoid-break" style={{ marginBottom: '10px' }}>
                         <tbody>
                             <tr>
-                                <th>اسم المعلم</th>
-                                <td>{formData.teacherName || 'ــــــــــــــ'}</td>
+                                <td style={{ width: '25%' }}><b>اليوم:</b> {formData.day}</td>
+                                <td style={{ width: '25%' }}><b>التاريخ:</b> <span dir="ltr">{formData.date}</span></td>
+                                <td style={{ width: '50%' }} colSpan="2"><b>الفترة الدراسية:</b> {formData.period}</td>
                             </tr>
                             <tr>
-                                <th>الرقم المدني</th>
-                                <td>{formData.civilId || 'ــــــــــــــ'}</td>
+                                <td colSpan="2"><b>المعلم:</b> {formData.teacherName}</td>
+                                <td><b>الصف:</b> {formData.classLevel}</td>
+                                <td><b>الحصة:</b> {formData.lesson}</td>
                             </tr>
                             <tr>
-                                <th>المدرسة</th>
-                                <td>{formData.school || 'ــــــــــــــ'}</td>
-                            </tr>
-                            <tr>
-                                <th>تاريخ الزيارة</th>
-                                <td dir="ltr" style={{ textAlign: 'right' }}>{formData.date}</td>
-                            </tr>
-                            <tr>
-                                <th>عنوان الدرس / الوحدة</th>
-                                <td>{formData.lessonTitle || 'ــــــــــــــ'}</td>
-                            </tr>
-                            <tr>
-                                <th>التقييم المبدئي للدرس</th>
-                                <td style={{ fontWeight: 'bold' }}>{formData.evaluation}</td>
+                                <td colSpan="2"><b>المدرسة:</b> {formData.school}</td>
+                                <td><b>المكان:</b> {formData.place}</td>
+                                <td><b>عنوان الدرس:</b> {formData.lessonTitle}</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <div style={{ marginBottom: '20px' }}>
-                        <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: '#065f46', borderBottom: '1px solid #cbd5e1', paddingBottom: '5px' }}>أبرز الإيجابيات ونقاط القوة:</h3>
-                        <p style={{ minHeight: '80px', padding: '10px', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', whiteSpace: 'pre-wrap' }}>
-                            {formData.strengths || 'لم يتم تدوين ملاحظات.'}
-                        </p>
+                    <table className="pdf-table" style={{ marginTop: '0px', marginBottom: '10px' }}>
+                        <thead>
+                            <tr>
+                                <th style={{ width: '5%', textAlign: 'center' }}>م</th>
+                                <th style={{ width: '40%' }}>البند</th>
+                                <th style={{ width: '10%', textAlign: 'center' }}>مناسب</th>
+                                <th style={{ width: '10%', textAlign: 'center' }}>إلى حد ما</th>
+                                <th style={{ width: '10%', textAlign: 'center' }}>غير مناسب</th>
+                                <th style={{ width: '25%' }}>ملاحظات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {evaluationCriteria.map((cat, cIdx) => (
+                                <React.Fragment key={cIdx}>
+                                    <tr className="avoid-break" style={{ backgroundColor: '#e2e8f0' }}>
+                                        <td colSpan="6" style={{ fontWeight: 'bold' }}>{cat.category}</td>
+                                    </tr>
+                                    {cat.items.map((item, iIdx) => {
+                                        const key = `${cIdx}-${iIdx}`;
+                                        const currentVal = formData.evaluations[key] || {};
+                                        return (
+                                            <tr key={key} className="avoid-break">
+                                                <td style={{ textAlign: 'center', fontWeight: 'bold' }}>{iIdx + 1}</td>
+                                                <td>{item}</td>
+                                                <td style={{ textAlign: 'center', fontSize: '14px' }}>{currentVal.rating === 'مناسب' ? '✔' : ''}</td>
+                                                <td style={{ textAlign: 'center', fontSize: '14px' }}>{currentVal.rating === 'إلى حد ما' ? '✔' : ''}</td>
+                                                <td style={{ textAlign: 'center', fontSize: '14px' }}>{currentVal.rating === 'غير مناسب' ? '✔' : ''}</td>
+                                                <td>{currentVal.note}</td>
+                                            </tr>
+                                        )
+                                    })}
+                                </React.Fragment>
+                            ))}
+                        </tbody>
+                    </table>
+
+                    <div className="avoid-break" style={{ marginTop: '5px' }}>
+                        <p style={{ fontWeight: 'bold', textDecoration: 'underline', marginBottom: '5px' }}>التوصيات:</p>
+                        <div style={{ minHeight: '50px', padding: '10px', border: '1px solid #000', whiteSpace: 'pre-wrap', fontSize: '12px' }}>
+                            {formData.recommendations || ' '}
+                        </div>
                     </div>
 
-                    <div style={{ marginBottom: '30px' }}>
-                        <h3 style={{ fontSize: '18px', fontWeight: 'bold', color: '#065f46', borderBottom: '1px solid #cbd5e1', paddingBottom: '5px' }}>التوصيات والتوجيهات الفنية:</h3>
-                        <p style={{ minHeight: '80px', padding: '10px', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', whiteSpace: 'pre-wrap' }}>
-                            {formData.recommendations || 'لا توجد توصيات إضافية.'}
-                        </p>
-                    </div>
-
-                    <div style={{ marginTop: '50px', display: 'flex', justifyContent: 'space-between', padding: '0 20px' }}>
+                    <div className="avoid-break" style={{ marginTop: '30px', display: 'flex', justifyContent: 'space-between', padding: '0 20px', fontSize: '14px' }}>
                         <div style={{ textAlign: 'center' }}>
-                            <p style={{ fontWeight: 'bold', marginBottom: '30px' }}>الموجه الفني للفيزياء</p>
-                            <p>.......................................</p>
+                            <p style={{ fontWeight: 'bold', marginBottom: '30px' }}>توقيع المعلم /</p>
+                            <p>.......................</p>
                         </div>
                         <div style={{ textAlign: 'center' }}>
-                            <p style={{ fontWeight: 'bold', marginBottom: '30px' }}>يعتمد ،،، الموجه الفني الأول</p>
-                            <p>أ. طارق شهاب</p>
+                            <p style={{ fontWeight: 'bold', marginBottom: '30px' }}>رئيس القسم /</p>
+                            <p>.......................</p>
+                        </div>
+                        <div style={{ textAlign: 'center' }}>
+                            <p style={{ fontWeight: 'bold', marginBottom: '30px' }}>توقيع الموجه الفني /</p>
+                            <p>.......................</p>
                         </div>
                     </div>
                 </div>
@@ -893,13 +1120,53 @@
         // ==========================================
         // Analytics View (تحليل النتائج)
         // ==========================================
-        function AnalyticsView() {
-          const schoolsData = [
-            { name: 'أيوب حسين الأيوب', passRate: 85, failRate: 15 },
-            { name: 'عيسى عبد الله الهولي', passRate: 92, failRate: 8 },
-            { name: 'هشام بن العاص', passRate: 58, failRate: 42 },
-            { name: 'الكندي', passRate: 88, failRate: 12 },
-          ];
+        function AnalyticsView({ data, setData, teachers, alerts, setAlerts }) {
+          const [isAdding, setIsAdding] = useState(false);
+          const [newResult, setNewResult] = useState({ name: '', passRate: '' });
+          const [showDropdown, setShowDropdown] = useState(false);
+
+          // حالات التنبيهات
+          const [isAddingAlert, setIsAddingAlert] = useState(false);
+          const [newAlert, setNewAlert] = useState({ title: '', text: '', type: 'red' });
+
+          // استخراج قائمة المدارس من قاعدة بيانات المعلمين بدون تكرار
+          const uniqueSchools = Array.from(new Set(teachers.map(t => t.school))).filter(s => s && s !== 'التوجيه الفني');
+          const filteredSchools = uniqueSchools.filter(s => s.includes(newResult.name));
+
+          const handleSchoolSelect = (schoolName) => {
+            setNewResult({ ...newResult, name: schoolName });
+            setShowDropdown(false);
+          };
+
+          const handleAdd = (e) => {
+            e.preventDefault();
+            const rate = parseFloat(newResult.passRate);
+            if (!newResult.name || isNaN(rate) || rate < 0 || rate > 100) {
+              alert('الرجاء إدخال اسم المدرسة ونسبة مئوية صحيحة (0-100)');
+              return;
+            }
+            const newId = data.length > 0 ? Math.max(...data.map(d => d.id)) + 1 : 1;
+            setData([...data, { id: newId, name: newResult.name, passRate: rate }]);
+            setNewResult({ name: '', passRate: '' });
+            setIsAdding(false);
+          };
+
+          const handleDelete = (id) => {
+            setData(data.filter(d => d.id !== id));
+          };
+
+          const handleAddAlert = (e) => {
+            e.preventDefault();
+            if (!newAlert.title || !newAlert.text) return;
+            const newId = alerts.length > 0 ? Math.max(...alerts.map(a => a.id)) + 1 : 1;
+            setAlerts([{ id: newId, ...newAlert }, ...alerts]);
+            setNewAlert({ title: '', text: '', type: 'red' });
+            setIsAddingAlert(false);
+          };
+
+          const handleDeleteAlert = (id) => {
+            setAlerts(alerts.filter(a => a.id !== id));
+          };
 
           return (
             <div className="p-8 animate-fade-in">
@@ -907,38 +1174,133 @@
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-                  <h3 className="text-xl font-bold text-emerald-900 mb-6">نسب النجاح والرسوب حسب المدرسة</h3>
-                  <div className="space-y-6">
-                    {schoolsData.map((school, i) => (
-                      <div key={i}>
-                        <div className="flex justify-between text-sm mb-2">
-                          <span className="font-bold text-gray-700">{school.name}</span>
-                          <span className="text-emerald-600 font-bold">نجاح: {school.passRate}%</span>
+                  <div className="flex justify-between items-center mb-6 border-b pb-4">
+                    <h3 className="text-xl font-bold text-emerald-900">نسب النجاح والرسوب</h3>
+                    <button onClick={() => setIsAdding(!isAdding)} className="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-xl font-bold text-sm hover:bg-emerald-200 transition-colors">
+                      {isAdding ? 'إلغاء' : 'إضافة نتيجة مدرسة +'}
+                    </button>
+                  </div>
+
+                  {isAdding && (
+                    <form onSubmit={handleAdd} className="mb-6 p-5 bg-gray-50 rounded-xl border border-gray-200 shadow-inner">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div className="relative">
+                          <label className="block text-sm font-bold text-gray-700 mb-1">المدرسة</label>
+                          <input 
+                            type="text" 
+                            required 
+                            value={newResult.name} 
+                            onChange={e => {
+                                setNewResult({...newResult, name: e.target.value});
+                                setShowDropdown(true);
+                            }} 
+                            onFocus={() => setShowDropdown(true)}
+                            onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
+                            className="w-full p-3 border border-gray-300 rounded-lg outline-none focus:border-emerald-500" 
+                            placeholder="ابحث أو اختر المدرسة..." 
+                          />
+                          {showDropdown && filteredSchools.length > 0 && (
+                             <ul className="absolute z-10 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-xl max-h-48 overflow-y-auto">
+                               {filteredSchools.map((school, idx) => (
+                                 <li 
+                                   key={idx} 
+                                   className="p-3 hover:bg-emerald-50 cursor-pointer border-b last:border-b-0 text-sm font-semibold text-gray-700"
+                                   onClick={() => handleSchoolSelect(school)}
+                                 >
+                                   {school}
+                                 </li>
+                               ))}
+                             </ul>
+                          )}
                         </div>
-                        <div className="w-full bg-red-100 rounded-full h-4 flex overflow-hidden">
-                          <div className="bg-emerald-500 h-4 transition-all duration-1000" style={{ width: `${school.passRate}%` }}></div>
-                          <div className="bg-red-500 h-4 transition-all duration-1000" style={{ width: `${school.failRate}%` }}></div>
+                        <div>
+                          <label className="block text-sm font-bold text-gray-700 mb-1">نسبة النجاح (%)</label>
+                          <input type="number" min="0" max="100" step="0.1" required value={newResult.passRate} onChange={e => setNewResult({...newResult, passRate: e.target.value})} className="w-full p-3 border border-gray-300 rounded-lg outline-none focus:border-emerald-500" placeholder="مثال: 65.5" />
                         </div>
                       </div>
-                    ))}
+                      <button type="submit" className="bg-emerald-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-emerald-700 transition-colors w-full md:w-auto">حفظ وإضافة</button>
+                    </form>
+                  )}
+
+                  <div className="space-y-6">
+                    {data.length === 0 ? (
+                        <p className="text-gray-500 text-center p-4">لا توجد نتائج مسجلة.</p>
+                    ) : data.map((school) => {
+                      const passRate = parseFloat(school.passRate);
+                      const failRate = parseFloat((100 - passRate).toFixed(1));
+                      return (
+                      <div key={school.id} className="relative group">
+                        <div className="flex justify-between text-sm mb-2">
+                          <span className="font-bold text-gray-700">{school.name}</span>
+                          <span className="text-emerald-600 font-bold">نجاح: {passRate}%</span>
+                        </div>
+                        <div className="flex items-center gap-3">
+                            <button onClick={() => handleDelete(school.id)} className="text-gray-300 hover:text-red-500 transition-colors" title="حذف">
+                                <Icons.Trash />
+                            </button>
+                            <div className="w-full bg-red-100 rounded-full h-4 flex overflow-hidden">
+                              <div className="bg-emerald-500 h-4 transition-all duration-1000" style={{ width: `${passRate}%` }}></div>
+                              <div className="bg-red-500 h-4 transition-all duration-1000" style={{ width: `${failRate}%` }}></div>
+                            </div>
+                        </div>
+                      </div>
+                      );
+                    })}
                   </div>
-                  <div className="mt-8 flex gap-6 text-sm justify-center font-bold text-gray-600">
+                  <div className="mt-8 flex gap-6 text-sm justify-center font-bold text-gray-600 border-t pt-6">
                     <span className="flex items-center gap-2"><span className="w-4 h-4 bg-emerald-500 rounded-full"></span> نسبة النجاح</span>
                     <span className="flex items-center gap-2"><span className="w-4 h-4 bg-red-500 rounded-full"></span> نسبة الرسوب</span>
                   </div>
                 </div>
 
                 <div className="bg-gradient-to-br from-red-50 to-orange-50 border-r-4 border-red-500 p-8 rounded-3xl shadow-lg">
-                  <h3 className="text-xl font-bold text-red-800 mb-6 flex items-center gap-2">
-                    <Icons.Chart /> تنبيهات وخطط علاجية مقترحة
-                  </h3>
+                  <div className="flex justify-between items-center mb-6">
+                    <h3 className="text-xl font-bold text-red-800 flex items-center gap-2">
+                      <Icons.Chart /> تنبيهات وخطط علاجية
+                    </h3>
+                    <button onClick={() => setIsAddingAlert(!isAddingAlert)} className="bg-red-100 text-red-800 px-4 py-2 rounded-xl font-bold text-sm hover:bg-red-200 transition-colors">
+                      {isAddingAlert ? 'إلغاء' : 'إضافة تنبيه +'}
+                    </button>
+                  </div>
+
+                  {isAddingAlert && (
+                    <form onSubmit={handleAddAlert} className="mb-6 p-5 bg-white rounded-xl border border-red-200 shadow-sm">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                          <label className="block text-sm font-bold text-gray-700 mb-1">العنوان / المدرسة</label>
+                          <input type="text" required value={newAlert.title} onChange={e => setNewAlert({...newAlert, title: e.target.value})} className="w-full p-3 border border-gray-300 rounded-lg outline-none focus:border-red-500" placeholder="مثال: مدرسة الكندي..." />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-bold text-gray-700 mb-1">النوع (اللون)</label>
+                          <select value={newAlert.type} onChange={e => setNewAlert({...newAlert, type: e.target.value})} className="w-full p-3 border border-gray-300 rounded-lg outline-none focus:border-red-500 font-bold">
+                            <option value="red">عاجل (أحمر)</option>
+                            <option value="orange">ملاحظة (برتقالي)</option>
+                          </select>
+                        </div>
+                        <div className="md:col-span-2">
+                          <label className="block text-sm font-bold text-gray-700 mb-1">التفاصيل / الخطة</label>
+                          <textarea required value={newAlert.text} onChange={e => setNewAlert({...newAlert, text: e.target.value})} className="w-full p-3 border border-gray-300 rounded-lg outline-none focus:border-red-500 h-20 resize-none" placeholder="تفاصيل الخطة العلاجية أو التنبيه..."></textarea>
+                        </div>
+                      </div>
+                      <button type="submit" className="bg-red-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-red-700 transition-colors w-full md:w-auto">حفظ وإضافة</button>
+                    </form>
+                  )}
+
                   <ul className="space-y-4">
-                    <li className="bg-white p-5 rounded-2xl shadow-sm border border-red-100 text-gray-700">
-                      <strong className="text-red-700 block mb-1">مدرسة هشام بن العاص:</strong> انخفاض نسبة النجاح عن المعدل الطبيعي (58%). يوصى بزيارة فنية مكثفة ومراجعة خطط رئيس القسم وإعداد خطة علاجية عاجلة.
-                    </li>
-                    <li className="bg-white p-5 rounded-2xl shadow-sm border border-orange-100 text-gray-700">
-                      <strong className="text-orange-700 block mb-1">تحليل الوحدات:</strong> لوحظ تدني عام في درجات وحدة "الكهرباء والمغناطيسية" على مستوى المنطقة. يوصى بتنظيم ورشة عمل فنية لمعلمي المنطقة.
-                    </li>
+                    {alerts.length === 0 ? (
+                      <p className="text-gray-500 text-center p-4">لا توجد تنبيهات مسجلة.</p>
+                    ) : (
+                      alerts.map(alert => (
+                        <li key={alert.id} className={`bg-white p-5 rounded-2xl shadow-sm border flex justify-between items-start transition-all hover:shadow-md ${alert.type === 'orange' ? 'border-orange-200' : 'border-red-200'}`}>
+                          <div className="text-gray-700 w-full pr-2">
+                            <strong className={`block mb-1 ${alert.type === 'orange' ? 'text-orange-700' : 'text-red-700'}`}>{alert.title}:</strong> {alert.text}
+                          </div>
+                          <button onClick={() => handleDeleteAlert(alert.id)} className="text-gray-400 hover:text-red-500 p-2 transition-colors shrink-0 mr-4" title="حذف">
+                            <Icons.Trash />
+                          </button>
+                        </li>
+                      ))
+                    )}
                   </ul>
                 </div>
               </div>
